@@ -38,4 +38,5 @@ void quick_sort_hoare(int *array, size_t size);
 
 /* prototypes - mine */
 void swapper(listint_t *a, listint_t *b);
+void swapper2(int *array, int a, int b);
 #endif /* SORT_H */
