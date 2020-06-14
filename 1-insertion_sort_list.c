@@ -1,6 +1,6 @@
 #include "sort.h"
 /**
- * insertion_sort - sort a dlist via insertion sort
+ * insertion_sort_list - sort a dlist via insertion sort
  * @list: the list to sort
  *
  *
