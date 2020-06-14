@@ -20,8 +20,7 @@ void selection_sort(int *array, size_t size)
 			if (array[b] < array[c])
 				c = b;
 		}
-		swapper2(array, c, a);
-		print_array(array, size);
+		swapper2(array, c, a, size);
 	}
 }
 /**
@@ -29,12 +28,14 @@ void selection_sort(int *array, size_t size)
  * @array: the array we are in
  * @a: the first element
  * @b: the second element
+ * @size: size of array to pass to print
  */
-void swapper2(int *array, int a, int b)
+void swapper2(int *array, int a, int b, size_t size)
 {
 	if (a == b)
 		return;
 	array[a] ^= array[b];
 	array[b] ^= array[a];
 	array[a] ^= array[b];
+	print_array((const int *)array, size);
 }
