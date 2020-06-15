@@ -10,32 +10,26 @@ void selection_sort(int *array, size_t size)
 {
 	/* declarations */
 	size_t a, b, c;
+	int temp;
 
-	/* sort it */
+	if (!(array && size))
+		return;
+	/* traverse it, if needed sort it */
 	for (a = 0; a < size - 1; a++)
 	{
-		c = a;
-		for (b = a + 1; b < size; b++)
+		for (b = size - 1, c = a + 1; b > a; b--)
 		{
 			if (array[b] < array[c])
 				c = b;
 		}
-		swapper2(array, c, a, size);
+
+		if (array[a] > array[c])
+		{
+			temp = array[a];
+			array[a] = array[c];
+			array[c] = temp;
+			/* print every swap */
+			print_array(array, size);
+		}
 	}
-}
-/**
- * swapper2 - swaps 2 elements of int array with XOR swap
- * @array: the array we are in
- * @a: the first element
- * @b: the second element
- * @size: size of array to pass to print
- */
-void swapper2(int *array, int a, int b, size_t size)
-{
-	if (a == b)
-		return;
-	array[a] ^= array[b];
-	array[b] ^= array[a];
-	array[a] ^= array[b];
-	print_array((const int *)array, size);
 }
