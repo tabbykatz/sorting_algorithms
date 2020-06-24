@@ -37,7 +37,9 @@ void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 
 /* prototypes - mine */
+void swap(int *array, int a, int b);
 void swapper(listint_t *a, listint_t *b);
+size_t knuth_gap(size_t size);
 void kwiksort(int *array, size_t size, ssize_t low, ssize_t high);
 size_t partition(int *array, size_t size, ssize_t low, ssize_t high);
 void swaps(int *array, size_t size, int *a, int *b);
